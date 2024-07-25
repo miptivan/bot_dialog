@@ -5,8 +5,8 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.redis import DefaultKeyBuilder, RedisStorage
 from aiogram_dialog import setup_dialogs
-from redis.asyncio.client import Redis
 from environs import Env
+from redis.asyncio.client import Redis
 
 import handlers.handlers
 from dialogs.bank_card_dialog import bank_card
@@ -18,9 +18,12 @@ async def main() -> None:
     env = Env()
     env.read_env()
 
-    BOT_TOKEN = env('BOT_TOKEN')
+    BOT_TOKEN = env("BOT_TOKEN")
 
-    bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    bot = Bot(
+        token=BOT_TOKEN,
+        default=DefaultBotProperties(parse_mode=ParseMode.HTML),
+    )
 
     storage = RedisStorage(
         Redis(),
