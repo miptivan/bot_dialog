@@ -19,6 +19,7 @@ async def region_card(
 
 
 def bank_card_number_check(text: str) -> str:
+    # Здесь будет проверка по алгоритму Луна
     if all(ch.isdigit() for ch in text):
         return text
     raise ValueError
