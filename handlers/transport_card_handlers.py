@@ -2,6 +2,7 @@ from aiogram.types import CallbackQuery
 from aiogram_dialog import DialogManager, StartMode
 from aiogram_dialog.widgets.kbd import Button
 
+from states.lexicon import LEXICON_TRANSPORT_CARD_HANDLERS
 from states.states import StartSG, TransportCardDialog
 
 
@@ -21,6 +22,9 @@ async def get_category(
     callback: CallbackQuery, button: Button, manager: DialogManager
 ):
     manager.dialog_data["category"] = callback.data
-    print(callback.data)
-    await callback.answer(f"Nice to meet you, {callback.data}")
+    await callback.answer(
+        LEXICON_TRANSPORT_CARD_HANDLERS["greeting_message"].format(
+            callback.data
+        )
+    )
     await manager.done()

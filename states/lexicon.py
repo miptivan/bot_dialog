@@ -47,3 +47,13 @@ LEXICON_FAQ_DIALOG = {
     "question_3": "Вопрос 3",
     "back": "Назад",
 }
+
+LEXICON_BANK_CARD_HANDLERS = {
+    "correct_card_number_message": "Ваша карта {}",
+    "error_card_number_message": "Вы ввели некорректный номер карты. Попробуйте еще раз",
+    "non_text_message": "Вы отправили не текст!",
+}
+
+LEXICON_TRANSPORT_CARD_HANDLERS = {
+    "greeting_message": "Nice to meet you, {}",
+}
