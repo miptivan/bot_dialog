@@ -11,7 +11,7 @@ from handlers.bank_card_handlers import (  # Потом будут написа�
     no_text,
 )
 from handlers.transport_card_handlers import get_category, go_start
-from states.lexicon import LEXICON_TRANSPORT_CARD
+from lexicon.lexicon import LEXICON_TRANSPORT_CARD
 from states.states import TransportCardDialog
 
 

@@ -2,7 +2,7 @@ from aiogram_dialog import Dialog, Window
 from aiogram_dialog.widgets.text import Const
 
 from handlers.bank_card_handlers import *
-from states.lexicon import LEXICON_FAQ_DIALOG
+from lexicon.lexicon import LEXICON_FAQ_DIALOG
 from states.states import FAQDialog
 
 

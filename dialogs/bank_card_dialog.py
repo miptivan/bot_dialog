@@ -5,7 +5,7 @@ from aiogram_dialog.widgets.kbd import Back, Row, SwitchTo, Url
 from aiogram_dialog.widgets.text import Const
 
 from handlers.bank_card_handlers import *
-from states.lexicon import LEXICON_BANK_CARD
+from lexicon.lexicon import LEXICON_BANK_CARD
 from states.states import BankCardDialog
 
 

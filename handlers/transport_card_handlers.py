@@ -2,7 +2,7 @@ from aiogram.types import CallbackQuery
 from aiogram_dialog import DialogManager, StartMode
 from aiogram_dialog.widgets.kbd import Button
 
-from states.lexicon import LEXICON_TRANSPORT_CARD_HANDLERS
+from lexicon.lexicon import LEXICON_TRANSPORT_CARD_HANDLERS
 from states.states import StartSG, TransportCardDialog
 
 
