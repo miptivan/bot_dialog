@@ -30,7 +30,11 @@ transport_card = Dialog(
                 state=TransportCardDialog.no_transport_card,
             ),
         ),
-        Button(Const(LEXICON_TRANSPORT_CARD["back"]), id="button_start", on_click=go_start),
+        Button(
+            Const(LEXICON_TRANSPORT_CARD["back"]),
+            id="button_start",
+            on_click=go_start,
+        ),
         state=TransportCardDialog.start,
     ),
     Window(

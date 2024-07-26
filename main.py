@@ -9,11 +9,17 @@ from environs import Env
 from redis.asyncio.client import Redis
 
 import handlers.handlers
-from dialogs.faq_dialog import faq_dialog
+from config.config import (
+    BOT_TOKEN,
+    PARSE_MODE,
+    REDIS_HOST,
+    REDIS_PASSWORD,
+    REDIS_PORT,
+)
 from dialogs.bank_card_dialog import bank_card
+from dialogs.faq_dialog import faq_dialog
 from dialogs.main_menu import main_menu
 from dialogs.transport_card_dialog import transport_card
-from config.config import BOT_TOKEN, PARSE_MODE, REDIS_HOST, REDIS_PORT, REDIS_PASSWORD
 
 
 async def main() -> None:
@@ -38,6 +44,7 @@ async def main() -> None:
     # Пропускаем накопившиеся апдейты и запускаем polling
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
+
 
 if __name__ == "__main__":
     asyncio.run(main())

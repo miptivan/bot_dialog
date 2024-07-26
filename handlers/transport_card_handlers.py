@@ -2,7 +2,7 @@ from aiogram.types import CallbackQuery
 from aiogram_dialog import DialogManager, StartMode
 from aiogram_dialog.widgets.kbd import Button
 
-from states.states import TransportCardDialog, StartSG
+from states.states import StartSG, TransportCardDialog
 
 
 async def go_start(

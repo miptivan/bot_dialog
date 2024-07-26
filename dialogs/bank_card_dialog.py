@@ -14,7 +14,9 @@ bank_card = Dialog(
         Const(text=LEXICON_BANK_CARD["start_question"]),
         Row(
             Button(
-                text=Const(LEXICON_BANK_CARD["stop_list"]), id="stop_list", on_click=stop_list
+                text=Const(LEXICON_BANK_CARD["stop_list"]),
+                id="stop_list",
+                on_click=stop_list,
             ),
             Button(
                 text=Const(LEXICON_BANK_CARD["region_card"]),
@@ -22,7 +24,11 @@ bank_card = Dialog(
                 on_click=region_card,
             ),
         ),
-        Button(Const(LEXICON_BANK_CARD["back"]), id="button_start", on_click=go_start),
+        Button(
+            Const(LEXICON_BANK_CARD["back"]),
+            id="button_start",
+            on_click=go_start,
+        ),
         state=BankCardDialog.start,
     ),
     Window(
@@ -44,7 +50,11 @@ bank_card = Dialog(
             url=Const(LEXICON_BANK_CARD["info_url"]),
             id="info",
         ),
-        SwitchTo(Const(LEXICON_BANK_CARD["back"]), id="to_start", state=BankCardDialog.start),
+        SwitchTo(
+            Const(LEXICON_BANK_CARD["back"]),
+            id="to_start",
+            state=BankCardDialog.start,
+        ),
         state=BankCardDialog.region_card,
     ),
 )
