@@ -1,12 +1,9 @@
-from aiogram.enums import ContentType
 from aiogram_dialog import Dialog, Window
-from aiogram_dialog.widgets.input import TextInput
-from aiogram_dialog.widgets.kbd import Back, Row, SwitchTo, Url
 from aiogram_dialog.widgets.text import Const
 
 from handlers.bank_card_handlers import *
 from states.lexicon import LEXICON_FAQ_DIALOG
-from states.states import BankCardDialog, FAQDialog
+from states.states import FAQDialog
 
 
 faq_dialog = Dialog(

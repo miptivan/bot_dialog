@@ -5,7 +5,6 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.redis import DefaultKeyBuilder, RedisStorage
 from aiogram_dialog import setup_dialogs
-from environs import Env
 from redis.asyncio.client import Redis
 
 import handlers.handlers
