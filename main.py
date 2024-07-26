@@ -20,6 +20,7 @@ from dialogs.bank_card_dialog import bank_card
 from dialogs.faq_dialog import faq_dialog
 from dialogs.main_menu import main_menu
 from dialogs.transport_card_dialog import transport_card
+from middlewares.errors import UnknownIntentMiddleware, UnknownStateMiddleware
 
 
 async def main() -> None:
@@ -33,7 +34,8 @@ async def main() -> None:
         key_builder=DefaultKeyBuilder(with_destiny=True),
     )
     dp = Dispatcher(storage=storage)
-
+    dp.update.outer_middleware(UnknownIntentMiddleware())
+    dp.update.outer_middleware(UnknownStateMiddleware())
     router = Router()
 
     dp.include_router(router)
