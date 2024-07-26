@@ -3,7 +3,7 @@ from aiogram_dialog import DialogManager, StartMode
 from aiogram_dialog.widgets.input import ManagedTextInput, MessageInput
 from aiogram_dialog.widgets.kbd import Button
 
-from states.lexicon import LEXICON_BANK_HANDLERS
+from states.lexicon import LEXICON_BANK_CARD_HANDLERS
 from states.states import BankCardDialog, StartSG
 
 
@@ -33,7 +33,9 @@ async def correct_card_number_handler(
     text: str,
 ) -> None:
     await message.answer(
-        text=LEXICON_BANK_HANDLERS["correct_card_number_message"].format(text)
+        text=LEXICON_BANK_CARD_HANDLERS["correct_card_number_message"].format(
+            text
+        )
     )
 
 
@@ -44,7 +46,7 @@ async def error_card_number_handler(
     error: ValueError,
 ):
     await message.answer(
-        text=LEXICON_BANK_HANDLERS["error_card_number_message"]
+        text=LEXICON_BANK_CARD_HANDLERS["error_card_number_message"]
     )
 
 
@@ -57,4 +59,4 @@ async def go_start(
 async def no_text(
     message: Message, widget: MessageInput, dialog_manager: DialogManager
 ):
-    await message.answer(text=LEXICON_BANK_HANDLERS["non_text_message"])
+    await message.answer(text=LEXICON_BANK_CARD_HANDLERS["non_text_message"])
