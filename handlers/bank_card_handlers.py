@@ -20,9 +20,24 @@ async def region_card(
 
 
 def bank_card_number_check(text: str) -> str:
-    # Здесь будет проверка по алгоритму Луна
-    if all(ch.isdigit() for ch in text):
-        return text
+    # 4000 0012 3456 7899
+    card = text.replace(' ', '')
+    if len(card) == 16 and card.isdigit():
+        checksum = 0
+        cardnumbers = list(map(int, card))
+        for count, num in enumerate(cardnumbers):
+            if count % 2 == 0:
+                buffer = num * 2
+                if buffer > 9:
+                    buffer -= 9
+                checksum += buffer
+            else:
+                checksum += num
+        if checksum % 10 == 0:
+            return card
+        else:
+            raise ValueError
+    # print("Неверно набран номер!")
     raise ValueError
 
 

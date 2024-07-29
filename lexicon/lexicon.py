@@ -49,7 +49,7 @@ LEXICON_FAQ_DIALOG = {
 }
 
 LEXICON_BANK_CARD_HANDLERS = {
-    "correct_card_number_message": "Ваша карта {}",
+    "correct_card_number_message": "Ваша карта {} имеет корректный формат",
     "error_card_number_message": "Вы ввели некорректный номер карты. Попробуйте еще раз",
     "non_text_message": "Вы отправили не текст!",
 }
