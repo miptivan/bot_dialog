@@ -1,12 +1,7 @@
 [tool.black]
 line-length = 79
 exclude = '''
-^/(
- (
- \.eggs # exclude a few common directories in the
- | \.git
- | \.venv
- | \venv
- )/
-)
+/(
+    venv
+)/
 '''

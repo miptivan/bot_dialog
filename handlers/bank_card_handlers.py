@@ -21,7 +21,7 @@ async def region_card(
 
 def bank_card_number_check(text: str) -> str:
     # 4000 0012 3456 7899
-    card = text.replace(' ', '')
+    card = text.replace(" ", "")
     if len(card) == 16 and card.isdigit():
         checksum = 0
         cardnumbers = list(map(int, card))

@@ -8,3 +8,24 @@ from states.states import (
     StartSG,
     TransportCardDialog,
 )
+
+
+main_menu = Dialog(
+    Window(
+        Const(text="Главное меню"),
+        Start(
+            Const("Банковская карта"),
+            id="bank_card",
+            state=BankCardDialog.start,
+        ),
+        Start(
+            Const("Транспортная карта"),
+            id="transport_card",
+            state=TransportCardDialog.start,
+        ),
+        Start(
+            Const("Частые вопросы"), id="faq_card", state=FAQDialog.window_1
+        ),
+        state=StartSG.start,
+    )
+)
