@@ -6,7 +6,7 @@ from states.states import (
     BankCardDialog,
     FAQDialog,
     StartSG,
-    TransportCardDialog,
+    TransportCardDialog, Support,
 )
 
 
@@ -24,7 +24,10 @@ main_menu = Dialog(
             state=TransportCardDialog.start,
         ),
         Start(
-            Const("Частые вопросы"), id="faq_card", state=FAQDialog.window_1
+            Const("Частые вопросы"), id="faq", state=FAQDialog.window_1
+        ),
+        Start(
+            Const("Поддержка"), id="support", state=Support.window_1
         ),
         state=StartSG.start,
     )

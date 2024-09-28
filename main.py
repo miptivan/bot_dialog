@@ -18,6 +18,7 @@ from config.config import (
 from dialogs.bank_card_dialog import bank_card
 from dialogs.faq_dialog import faq_dialog
 from dialogs.main_menu import main_menu
+from dialogs.support_dialog import support
 from dialogs.transport_card_dialog import transport_card
 from middlewares.errors import UnknownIntentMiddleware, UnknownStateMiddleware
 
@@ -39,7 +40,7 @@ async def main() -> None:
 
     dp.include_router(router)
     dp.include_router(handlers.handlers.router)
-    dp.include_routers(main_menu, bank_card, transport_card, faq_dialog)
+    dp.include_routers(main_menu, bank_card, transport_card, support, faq_dialog)
     setup_dialogs(dp)
 
     # Пропускаем накопившиеся апдейты и запускаем polling

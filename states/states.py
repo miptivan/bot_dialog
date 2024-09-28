@@ -28,3 +28,10 @@ class FAQDialog(StatesGroup):
     window_2 = State()
     window_3 = State()
     window_4 = State()
+
+
+class Support(StatesGroup):
+    enter_message = State()
+    response_waiting = State()
+    window_3 = State()
+    window_4 = State()
