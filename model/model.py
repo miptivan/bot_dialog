@@ -1,25 +1,21 @@
 import cx_Oracle
+from aiogram.types import Message
 
-# Параметры подключения
 dsn = cx_Oracle.makedsn(host='192.168.8.19', port=1521, service_name='ORCLPDB1')
 username = 'telegram'
 password = 'telegrambase'
 
-# Подключение к базе данных
-connection = cx_Oracle.connect(user=username, password=password, dsn=dsn)
 
-# Создание курсора
-cursor = connection.cursor()
+def insert_user_message(message: Message):
+    connection = cx_Oracle.connect(user=username, password=password, dsn=dsn)
 
-# Вставка данных
-cursor.execute("""
-    INSERT INTO MESSAGES (column1)
-    VALUES (:value1)
-""", value1=12)
+    cursor = connection.cursor()
 
-# Фиксация изменений
-connection.commit()
+    cursor.execute("""
+        INSERT INTO MESSAGES (column1)
+        VALUES (:value1)
+    """, value1=12)
 
-# Закрытие курсора и соединения
-cursor.close()
-connection.close()
+    connection.commit()
+    cursor.close()
+    connection.close()
