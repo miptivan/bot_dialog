@@ -27,7 +27,7 @@ main_menu = Dialog(
             Const("Частые вопросы"), id="faq", state=FAQDialog.window_1
         ),
         Start(
-            Const("Поддержка"), id="support", state=Support.window_1
+            Const("Поддержка"), id="support", state=Support.enter_message
         ),
         state=StartSG.start,
     )
