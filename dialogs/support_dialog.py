@@ -8,6 +8,7 @@ from aiogram_dialog.widgets.kbd import Row, Button
 from aiogram_dialog.widgets.text import Const
 
 from handlers.support_card_handlers import go_start
+from model.model import insert_user_message
 from states.states import Support
 
 
@@ -22,7 +23,7 @@ async def correct_text(
         widget: ManagedTextInput,
         dialog_manager: DialogManager,
         text: str) -> None:
-    
+    insert_user_message(message)
     await dialog_manager.switch_to(Support.response_waiting)
     await message.answer(text=f'Мы получили сообщение: "{text}"')
 
