@@ -13,12 +13,12 @@ def insert_user_message(message: Message):
     print(message.date)
     date_str = str(int(message.date.timestamp()))
     print(date_str)
+    str_sql = f''
 
     cursor.execute("""
         INSERT INTO MESSAGES (MESSAGE_ID, OWNER_MSG, TEXT_MSG, DATE_MSG)
-        VALUES (:message_id, :owner_msg, :text_msg, :date_msg /*to_date('YYYY-MM-DD H24:MI:SS+00:00',:date)*/)
-    """, message_id=str(message.message_id), owner_msg=str(message.from_user.id), text_msg=str(message.text), date_msg=date_str)
-
+        VALUES (:message_id, :owner_msg, :text_msg, to_date('YYYY-MM-DD H24:MI:SS',SUBSTR(:date_msg,1,20))
+    """, message_id=str(message.message_id), owner_msg=str(message.from_user.id), text_msg=str(message.text), date_msg=message.date)
 
     connection.commit()
     cursor.close()
